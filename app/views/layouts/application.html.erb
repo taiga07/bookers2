@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/91d36909a5.js" crossorigin="anonymous"></script>
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +11,57 @@
   </head>
 
   <body>
+
+    <header>
+      <nav class="nav-box">
+        <div class="flex">
+          <a href="/">Bookers</a>
+          <li>
+            <a class="fas fa-home">Home</a>
+          </li>
+
+          <% if user_signed_in? %>
+          <li>
+            <a class="fas fa-users">Users</a>
+          </li>
+          <li>
+            <a class="fas fa-book-open">Books</a>
+          </li>
+          <li>
+            <a class="fas fa-sign-out-alt">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </a>
+          </li>
+
+          <% else %>
+          <li>
+            <a class="fas fa-link">About</a>
+          </li>
+          <li>
+            <a class="fas fa-user-plus">
+              <%= link_to "Sign up", new_user_registration_path %>
+            </a>
+          </li>
+          <li>
+            <a class="fas fa-sign-out-alt">
+              <%= link_to "Log in", new_user_session_path %>
+            </a>
+          </li>
+        <% end %>
+
+
+        </div>
+      </nav>
+    </header>
+
+
+
+
+
     <%= yield %>
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+
+    </footer>
   </body>
 </html>

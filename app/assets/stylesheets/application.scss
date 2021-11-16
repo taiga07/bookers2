@@ -13,6 +13,28 @@
  *= require_tree .
  *= require_self
  */
- 
+
  @import "bootstrap";
- 
+
+header{
+  background-color: #343a40
+}
+
+.nav-box{
+  padding: 0.5rem 1rem;
+}
+
+ .flex{
+   display: flex;
+  justify-content: flex-end;
+ }
+ .flex > :first-child {
+  margin-right: auto;
+}
+li {
+  list-style: none;
+}
+
+footer{
+  text-align:center;
+}
