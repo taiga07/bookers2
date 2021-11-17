@@ -16,16 +16,23 @@
       <nav class="nav-box">
         <div class="flex">
           <a href="/">Bookers</a>
-          <li>
-            <a class="fas fa-home">Home</a>
-          </li>
+
 
           <% if user_signed_in? %>
           <li>
-            <a class="fas fa-users">Users</a>
+            <a class="fas fa-home">
+              <%= link_to 'Home',user_path(current_user.id) %>
+            </a>
           </li>
           <li>
-            <a class="fas fa-book-open">Books</a>
+            <a class="fas fa-users">
+              <%= link_to"Users",users_path, method: :get %>
+            </a>
+          </li>
+          <li>
+            <a class="fas fa-book-open">
+              <%= link_to"Books",books_path, method: :get %>
+            </a>
           </li>
           <li>
             <a class="fas fa-sign-out-alt">
@@ -34,6 +41,10 @@
           </li>
 
           <% else %>
+          <li>
+            <a class="fas fa-home" href="/">Home</a>
+
+          </li>
           <li>
             <a class="fas fa-link">About</a>
           </li>
