@@ -9,7 +9,7 @@
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
       <td><%= button_to "Edit", edit_book_path, method: :get %></td>
-      <td><%= button_to "Destroy", books_path, method: :delete %></td>
+      <td><%= button_to "Destroy", book_path(@book), method: :delete %></td>
     </tr>
   </tbody>
 </table>
