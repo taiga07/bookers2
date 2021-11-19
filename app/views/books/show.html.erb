@@ -1,15 +1,15 @@
-
+<%= render 'shared/template', book: @book, user: @user %>
 
 <h2>Book detail</h2>
 
 <table>
   <tbody>
     <tr>
-      <td></td>
+      <td><%= @book.user_id %></td>
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
-      <td></td>
-      <td></td>
+      <td><%= button_to "Edit", edit_book_path, method: :get %></td>
+      <td><%= button_to "Destroy", books_path, method: :delete %></td>
     </tr>
   </tbody>
 </table>

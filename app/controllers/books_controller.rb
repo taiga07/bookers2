@@ -15,10 +15,6 @@ def create
   redirect_to book_path(@book.id)
 end
 
-def update
-end
-
-
 def show
   @book=Book.new
   @book=Book.find(params[:id])
@@ -26,7 +22,14 @@ def show
 end
 
 def edit
+  @book=Book.find(params[:id])
   @user=current_user
+end
+
+def update
+  @book=Book.find(params[:id])
+  @book.update(book_params)
+  redirect_to book_path(@book.id)
 end
 
 def destroy
