@@ -23,7 +23,6 @@ end
 
 def edit
   @book=Book.find(params[:id])
-  @user=current_user
 end
 
 def update
