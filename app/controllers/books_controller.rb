@@ -17,7 +17,7 @@ end
 
 def show
   @book=Book.new
-  @book=Book.find(params[:id])
+  @books=Book.find(params[:id])
   @user=current_user
 end
 
