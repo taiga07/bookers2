@@ -23,7 +23,7 @@ end
 def show
   @book=Book.new
   @books=Book.find(params[:id])
-  @user=@book.user
+  @user=User.find_by(id: @books.user_id)
 end
 
 def edit
