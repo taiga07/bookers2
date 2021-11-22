@@ -18,8 +18,8 @@
             <td><%= @books.body %></td>
 
             <% if @books.user == current_user %>
-            <td><%= button_to "Edit", edit_book_path, method: :get %></td>
-            <td><%= button_to "Destroy", book_path(@books), method: :delete %></td>
+            <td><%= link_to "Edit", edit_book_path, method: :get %></td>
+            <td><%= link_to "Destroy", book_path(@books), method: :delete %></td>
             <% end %>
 
           </tr>

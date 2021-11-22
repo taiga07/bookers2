@@ -20,6 +20,10 @@
 
    <p>about various books!</p>
 
+   <%= link_to "Log in", new_user_session_path, class:"btn btn-info btn-sm btn-block mb-3 sign_in" %>
+
+   <%= link_to "Sign up", new_user_registration_path, method: :get, class:"btn btn-success btn-sm btn-block sign_up" %>
+
   </div>
  </div>
 </div>
@@ -29,6 +33,3 @@
 
 
 
-<%= button_to "Log in", new_user_session_path %>
-
-<%= button_to "Sign up", new_user_registration_path, method: :get %>
